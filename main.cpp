@@ -68,5 +68,6 @@ int main() {
     }
     while((t-s)>0.01);
     std::cout << "Required number of operations is " << i << std::endl;
+    std::cout << "The end of the task four.";
     return 0;
 }
