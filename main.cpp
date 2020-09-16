@@ -61,13 +61,19 @@ int main() {
     t = std::pow(e,m);
     double s = 1;
     int i = 1;
+    float k = 0.01;
     do
     {
-        s = s + (std::pow(m,i)/factorial(i));
-        i += 1;
+        do
+        {
+            s = s + (std::pow(m, i) / factorial(i));
+            i += 1;
+        }
+        while ((t - s) > k);
+        std::cout << "Required number of operations is " << i << " for precision " << k << std::endl;
+        k = k / 10;
     }
-    while((t-s)>0.01);
-    std::cout << "Required number of operations is " << i << std::endl;
-    std::cout << "The end of the task four.";
+    while (k>0.0000001);
+    std::cout << "The end of the task four." << std::endl;
     return 0;
 }
